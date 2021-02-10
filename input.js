@@ -1,3 +1,5 @@
+// Stores the active TCP connection object.
+let connection = require('./play');
 /**
  * Setup User Interface
  * Specifically, so that we can handle user input via stdin
@@ -8,20 +10,22 @@ const handleUserInput = key => {
     process.exit();
   }
   if (key === 'w') {
-    console.log('up');
+    console.log('Move: up');
   }
   if (key === 'a') {
-    console.log('left');
+    console.log('Move: left');
   }
   if (key === 's') {
-    console.log('down');
+    console.log('Move: down');
   }
   if (key === 'd') {
-    console.log('right');
+    console.log('Move: right');
   }
 };
 
-const setupInput = function() {
+
+const setupInput = function(conn) {
+  connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding('utf8');
