@@ -8,6 +8,11 @@ const connect = function() {
   // interpret incoming data as text
   conn.setEncoding('utf8');
 
+  conn.on('connect', () => {
+    console.log('Succesfully connected to game server: Welcome to Snake!');
+    conn.write('Name: STO');
+  });
+
   return conn;
 };
 
