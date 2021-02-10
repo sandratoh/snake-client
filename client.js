@@ -11,11 +11,11 @@ const connect = function() {
   conn.on('connect', () => {
     console.log('Succesfully connected to game server: Welcome to Snake!');
     conn.write('Name: STO');
+  });
 
-    conn.write('Move: up');
-    
+  conn.on('connect', () => {
     setTimeout(() => {
-      conn.write('Move: left');
+      conn.write('Move: up');
     }, 1000);
 
     setTimeout(() => {
@@ -23,10 +23,14 @@ const connect = function() {
     }, 2000);
 
     setTimeout(() => {
-      conn.write('Move: up');
+      conn.write('Move: left');
     }, 3000);
+
+    setTimeout(() => {
+      conn.write('Move: up');
+    }, 4000);
   });
-  
+
   // conn.on('connect', () => {
   //   setInterval(() => {
   //     conn.write('Move: left');
