@@ -13,6 +13,34 @@ const connect = function() {
     conn.write('Name: STO');
   });
 
+  conn.on('connect', () => {
+    conn.write('Move: up');
+  });
+  
+  conn.on('connect', () => {
+    setTimeout(() => {
+      conn.write('Move: left');
+    }, 1000);
+  });
+  
+  conn.on('connect', () => {
+    setTimeout(() => {
+      conn.write('Move: left');
+    }, 2000);
+  });
+  
+  conn.on('connect', () => {
+    setTimeout(() => {
+      conn.write('Move: up');
+    }, 3000);
+  });
+
+  // conn.on('connect', () => {
+  //   setInterval(() => {
+  //     conn.write('Move: left');
+  //   }, 1000);
+  // });
+  
   return conn;
 };
 
