@@ -21,6 +21,18 @@ const handleUserInput = key => {
   if (key === 'd') {
     connection.write('Move: right');
   }
+  // period
+  if (key === '\u002e') {
+    connection.write('Say: Boo');
+  }
+  // backslash
+  if (key === '\u002f') {
+    connection.write('Say: Weeee');
+  }
+  // space
+  if (key === '\u0020') {
+    connection.write('Say: Merry Christmas!');
+  }
 };
 
 
