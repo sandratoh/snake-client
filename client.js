@@ -1,3 +1,7 @@
+/**
+ * Establishes connection with the game server
+ */
+
 const net = require('net');
 
 const connect = function() {

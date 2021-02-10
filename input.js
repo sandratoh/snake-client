@@ -1,3 +1,8 @@
+/**
+ * Setup User Interface
+ * Specifically, so that we can handle user input via stdin
+ */
+
 const handleUserInput = key => {
   if (key === '\u0003') {
     process.exit();
